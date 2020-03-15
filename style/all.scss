@@ -27,7 +27,7 @@ body{
         width: 5em;
         overflow: hidden;
         white-space: nowrap;
-        animation: typing 2s steps(5);
+        animation: typing 2s steps(5) infinite;
     }
     @include mobile{
         height:100vh;
@@ -35,10 +35,13 @@ body{
 }
 
 .wrapper{
-    width:1000px;
+    width:80%;
     margin: 0 auto;
     font-family: 'Microsoft JhengHei', sans-serif;
-    
+    @include mobile{
+        width:100%
+    }
+
  
 }
 
@@ -82,7 +85,7 @@ body{
         bottom: -10%;
 
         @include mobile{
-            width:70%;
+            width:100%
         }
 
             .tag{
@@ -93,7 +96,7 @@ body{
                    cursor: pointer;
                 }   
                 @include mobile{
-                    font-size: 2rem;
+                    font-size: 1rem;
                 }   
             }
 
@@ -121,7 +124,6 @@ body{
         }
         @include mobile{
                 padding:0px;
-                font-size: 2rem;
                 width: 50px;
                 height: 44px;
                 line-height: 44px;
@@ -149,7 +151,7 @@ body{
         box-shadow: $box-shadow;
 
         @include mobile{
-            width:80%
+            width:100%
         }
         img{
             width:100%;

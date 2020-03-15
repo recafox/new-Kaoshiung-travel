@@ -78,6 +78,12 @@ function createTags(tagsCounty){
         tag.addEventListener('click', onTagSelect);
     })
 }
+function onTagSelect(e){
+    selected = e.target.innerText;
+    const select = document.querySelector('select');
+    select.value = selected;
+    toSelectedCounty(selected, data);
+};
 
 function createAreaSelector(countyArray, rootElement){
     rootElement.innerHTML = `
@@ -96,6 +102,7 @@ function createAreaSelector(countyArray, rootElement){
     };
 
     function onSelect(event){
+        selected = '';
         selected = event.target.value;
         if(selected.length){
             toSelectedCounty(selected, data);
@@ -104,7 +111,8 @@ function createAreaSelector(countyArray, rootElement){
             currentPage = 1;
             resetCurrentPage(currentPage);
             fetchData();
-        }
+        };
+        
     };
 
     createOption();
@@ -117,10 +125,7 @@ function createAreaSelector(countyArray, rootElement){
 createAreaSelector(countyName, document.querySelector('.areaSelector'));
 
 
-function onTagSelect(e){
-    selected = e.target.innerText;
-    toSelectedCounty(selected, data);
-}
+
 
 
 
