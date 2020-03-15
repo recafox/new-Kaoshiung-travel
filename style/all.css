@@ -223,6 +223,7 @@ h1 {
 
 body {
   font-family: 'Microsoft JhengHei', sans-serif;
+  background-color: #F7F7F7;
 }
 
 .loader {
@@ -255,14 +256,8 @@ body {
   width: 5em;
   overflow: hidden;
   white-space: nowrap;
-  -webkit-animation: typing 2s steps(5) infinite;
-          animation: typing 2s steps(5) infinite;
-}
-
-@media (max-width: 415px) {
-  .loader {
-    height: 100vh;
-  }
+  -webkit-animation: typing 1.5s steps(5) infinite;
+          animation: typing 1.5s steps(5) infinite;
 }
 
 .wrapper {
@@ -271,9 +266,10 @@ body {
   font-family: 'Microsoft JhengHei', sans-serif;
 }
 
-@media (max-width: 415px) {
+@media (max-width: 769px) {
   .wrapper {
     width: 100%;
+    padding: 0;
   }
 }
 
@@ -291,6 +287,7 @@ body {
 
 .header {
   background-image: url("../images/the-urban-landscape-1698285.png");
+  background-size: cover;
   height: 450px;
 }
 
@@ -330,26 +327,20 @@ body {
   bottom: -10%;
 }
 
-@media (max-width: 415px) {
+@media (max-width: 769px) {
   .header .tags-wrapper {
-    width: 100%;
+    width: 95%;
+    bottom: -5%;
   }
 }
 
 .header .tags-wrapper .tag {
   padding: 0.5rem;
-  font-size: 1.2rem;
   color: white;
 }
 
 .header .tags-wrapper .tag:hover {
   cursor: pointer;
-}
-
-@media (max-width: 415px) {
-  .header .tags-wrapper .tag {
-    font-size: 1rem;
-  }
 }
 
 .page-container {
@@ -378,7 +369,7 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 415px) {
+@media (max-width: 769px) {
   .page-container .page {
     padding: 0px;
     width: 50px;
@@ -409,11 +400,13 @@ body {
   width: 48%;
   -webkit-box-shadow: 3px 3px 5px #e7e7e7;
           box-shadow: 3px 3px 5px #e7e7e7;
+  margin-top: 1rem;
 }
 
-@media (max-width: 415px) {
+@media (max-width: 769px) {
   .card-container .card {
     width: 100%;
+    margin-top: 1.5rem;
   }
 }
 
@@ -422,7 +415,7 @@ body {
   height: 250px;
 }
 
-@media (max-width: 415px) {
+@media (max-width: 769px) {
   .card-container .card img {
     height: auto;
   }
