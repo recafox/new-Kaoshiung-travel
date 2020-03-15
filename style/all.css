@@ -1,0 +1,314 @@
+/* CSS reset with box-sizing fix */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*flex*/
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.justify-content-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justify-content-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.justify-content-evenly {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.justify-content-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.align-self-center {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+/**/
+.border {
+  border: 1px solid black;
+}
+
+/**/
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+/*margin & padding*/
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 1.5rem;
+}
+
+/*text*/
+.font-l {
+  font-size: 2rem;
+}
+
+.font-m {
+  font-size: 1.5rem;
+}
+
+.font-s {
+  font-size: 0.7rem;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+.header {
+  background-image: url("../images/the-urban-landscape-1698285.png");
+  height: 450px;
+}
+
+.header h1 {
+  margin-top: 150px;
+  color: white;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+}
+
+.header .areaSelector {
+  width: 50%;
+  font-family: inherit;
+  font-size: 20px;
+}
+
+.header .areaSelector select {
+  padding: 0.5rem;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-family: inherit;
+}
+
+@media (max-width: 415px) {
+  .header .areaSelector {
+    width: 80%;
+    height: 50px;
+  }
+}
+
+.page-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.page-container .page {
+  padding: 0.3rem;
+  color: #559AC8;
+}
+
+.page-container .page.is-active {
+  border-bottom: 5px solid #F5D005;
+  color: #F5D005;
+  font-weight: bold;
+}
+
+.page-container .page:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 415px) {
+  .page-container .page {
+    padding: 0px;
+    font-size: 2rem;
+    width: 50px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+  }
+}
+
+.results .area-title {
+  padding: 1rem;
+  font-weight: bold;
+  color: #559AC8;
+}
+
+.card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.card-container .card {
+  width: 48%;
+  -webkit-box-shadow: 3px 3px 5px #e7e7e7;
+          box-shadow: 3px 3px 5px #e7e7e7;
+}
+
+@media (max-width: 415px) {
+  .card-container .card {
+    width: 80%;
+  }
+}
+
+.card-container .card img {
+  width: 100%;
+  height: 250px;
+}
+
+@media (max-width: 415px) {
+  .card-container .card img {
+    height: auto;
+  }
+}
+
+.card-container .card .card-content {
+  padding: 0.5rem;
+  line-height: 1.5rem;
+}
+/*# sourceMappingURL=all.css.map */
