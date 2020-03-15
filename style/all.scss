@@ -3,10 +3,47 @@
 @import '_variables.scss';
 @import '_modules.scss';
 
+body{
+    font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+.loader{
+    width:100vw;
+    height:100vh;
+    background-color: $is-primary;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:all 0.5s ease;
+    &.is-hidden{
+        transform: translateY(-3000px);
+
+    }
+    h2{
+        font-size: 40px;
+        font-weight: bolder;
+        color: white;
+        width: 5em;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 2s steps(5);
+    }
+    @include mobile{
+        height:100vh;
+    }
+}
+
 .wrapper{
     width:1000px;
     margin: 0 auto;
     font-family: 'Microsoft JhengHei', sans-serif;
+    
+ 
+}
+
+@keyframes typing{
+    from{ width: 0}
 }
 
 .header{
@@ -37,7 +74,33 @@
 
         }
     }
+    .tags-wrapper{
+        width: 50%;
+        background: white;
+        margin-top: 1.5rem;
+        padding: 0.5rem;
+        bottom: -10%;
 
+        @include mobile{
+            width:70%;
+        }
+
+            .tag{
+                padding:0.5rem;
+                font-size: 1.2rem;
+                color:white;  
+                 &:hover {
+                   cursor: pointer;
+                }   
+                @include mobile{
+                    font-size: 2rem;
+                }   
+            }
+
+
+
+        
+    }
 }
 
 .page-container{

@@ -1,12 +1,26 @@
 let data =[];
 let displayItems =[];
 let selected;
+let loadingStat = false;
 
 const countyName = ["楠梓區", "左營區", "鼓山區", "三民區","鹽埕區","前金區","新興區","苓雅區","前鎮區","旗津區","小港區","鳳山區","大寮區","鳥松區","林園區","仁武區","大樹區","大社區","岡山區","路竹區","橋頭區","梓官區","彌陀區","永安區","燕巢區","田寮區","阿蓮區","茄萣區","湖內區","旗山區","美濃區","內門區","杉林區","甲山區","六龜區","茂林區","桃源區","那瑪夏區"];
 
 const rootEl = document.querySelector('.areaSelector');
 const results = document.querySelector('.results');
 const pageContainer = document.querySelector('.page-container');
+const tagContainer = document.querySelector('.tags-container');
+const tagsCounty = ["三民區", "苓雅區", "新興區", "鹽埕區"];
+
+
+function loaderSwitch(loadingStat){
+    const loader = document.querySelector('.loader');
+    if(loadingStat === false){
+        loader.classList.add('is-hidden');
+    }else if(loadingStat === true && loader.classList.contains('is-hidden')){
+        loader.classList.remove('is-hidden');
+    }
+}
+
 
 const pageSize = 8;
 let totalPages;
@@ -16,12 +30,15 @@ let nextPage = currentPage +1 ;
 
 
 const fetchData = ()=>{
+    loaderSwitch(true);
     fetch("https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97").then((data)=>{
         return data.json();
     }).then((jsonData)=>{
         data = jsonData.result.records;
     }).then(()=>{
         displayItems = data;
+        createTags(tagsCounty);
+        loaderSwitch(false);
         pageSetup(displayItems, currentPage);
         
     })
@@ -32,7 +49,37 @@ function resetCurrentPage(currentPage){
     prevPage = currentPage-1;
 };
 
-const createAreaSelector = (countyArray, rootElement) => {
+function createTags(tagsCounty){
+    tagContainer.innerHTML = '';
+    const tagsColor = ['bg-primary', 'bg-secondary', 'bg-warning', 'bg-info'];
+    tagsCounty.forEach((countyTag, index)=>{
+        const tag = document.createElement('div');
+        tag.classList.add('tag');
+        let color = (index + tagsColor.length)%tagsColor.length;
+        switch (color){
+            case 0:
+                tag.classList.add(tagsColor[0]);
+                break;
+            case 1:
+                tag.classList.add(tagsColor[1]);
+                break;
+            
+            case 2:
+                tag.classList.add(tagsColor[2]);
+                break;
+            case 3:
+                tag.classList.add(tagsColor[3]);
+                break;
+            default:
+                break;
+        }
+        tag.textContent = countyTag;
+        tagContainer.appendChild(tag);
+        tag.addEventListener('click', onTagSelect);
+    })
+}
+
+function createAreaSelector(countyArray, rootElement){
     rootElement.innerHTML = `
         <select>
             <option value=''>請選擇行政區</option>
@@ -68,6 +115,13 @@ const createAreaSelector = (countyArray, rootElement) => {
 
 
 createAreaSelector(countyName, document.querySelector('.areaSelector'));
+
+
+function onTagSelect(e){
+    selected = e.target.innerText;
+    toSelectedCounty(selected, data);
+}
+
 
 
 function toSelectedCounty(selected, data){

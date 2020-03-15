@@ -78,6 +78,15 @@ h1{
     margin-top:2rem;
 }
 
+.m-1{
+    margin:1rem;
+}
+
+.m-2{
+    margin:1.5rem;
+}
+
+
 .p-1{
     padding:1rem;
 }
@@ -111,3 +120,28 @@ h1{
 .text-align-right{
     text-align: right;
 }
+
+/*BG COLOR*/
+
+.bg-primary{
+    background-color: $is-primary;
+}
+
+.bg-secondary{
+    background-color: $is-secondary;
+}
+
+.bg-info{
+    background-color: $is-info;
+}
+
+.bg-warning{
+    background-color: $is-warning;
+}
+
+/*border-radius*/
+
+.rounded{
+    border-radius: 0.25rem;
+}
+

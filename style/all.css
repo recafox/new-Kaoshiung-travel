@@ -158,6 +158,14 @@ h1 {
   margin-top: 2rem;
 }
 
+.m-1 {
+  margin: 1rem;
+}
+
+.m-2 {
+  margin: 1.5rem;
+}
+
 .p-1 {
   padding: 1rem;
 }
@@ -191,10 +199,88 @@ h1 {
   text-align: right;
 }
 
+/*BG COLOR*/
+.bg-primary {
+  background-color: #559AC8;
+}
+
+.bg-secondary {
+  background-color: #8A82CC;
+}
+
+.bg-info {
+  background-color: #F5D005;
+}
+
+.bg-warning {
+  background-color: #FFA782;
+}
+
+/*border-radius*/
+.rounded {
+  border-radius: 0.25rem;
+}
+
+body {
+  font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  background-color: #559AC8;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.loader.is-hidden {
+  -webkit-transform: translateY(-3000px);
+          transform: translateY(-3000px);
+}
+
+.loader h2 {
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
+  width: 5em;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-animation: typing 2s steps(5);
+          animation: typing 2s steps(5);
+}
+
+@media (max-width: 415px) {
+  .loader {
+    height: 100vh;
+  }
+}
+
 .wrapper {
   width: 1000px;
   margin: 0 auto;
   font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
 }
 
 .header {
@@ -227,6 +313,36 @@ h1 {
   .header .areaSelector {
     width: 80%;
     height: 50px;
+  }
+}
+
+.header .tags-wrapper {
+  width: 50%;
+  background: white;
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  bottom: -10%;
+}
+
+@media (max-width: 415px) {
+  .header .tags-wrapper {
+    width: 70%;
+  }
+}
+
+.header .tags-wrapper .tag {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.header .tags-wrapper .tag:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 415px) {
+  .header .tags-wrapper .tag {
+    font-size: 2rem;
   }
 }
 
