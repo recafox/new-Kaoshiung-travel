@@ -8,4 +8,11 @@
     @media(max-width: 415px){
     @content
 }
+};
+
+@mixin  pc{
+    @media(max-width: 1439px) {
+        @content
+    }
 }
+
